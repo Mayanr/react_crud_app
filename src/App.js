@@ -4,12 +4,12 @@ import Home from './componenets/Home';
 import AddUser from './componenets/AddUser';
 import EditUser from './componenets/EditUser';
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 const App = () => {
-    console.log('testing');
     return (
-        <div className="App">
+        <div style={{maxWidth: "30rem", margin: "4rem auto"}}>
             <Router>
-                <h1>Nav</h1>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/add" element={<AddUser/>} />
