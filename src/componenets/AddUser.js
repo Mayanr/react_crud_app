@@ -8,14 +8,14 @@ import {
     Button
 } from 'reactstrap'
 
-const AddUser = () => {
+const AddUser = ({ onAddUser }) => {
     return (
         <Form>
             <FormGroup>
                 <Label>Name</Label>
                 <Input type="text" placeholder="Enter Name"></Input>
             </FormGroup>
-            <Button type="Submit">Submit</Button>
+            <Button type="Submit" onClick={e => onAddUser(e.target.value)}>Submit</Button>
             <Link to="/" className="btn btn-danger ml-2">Cancel</Link>
         </Form>
     );

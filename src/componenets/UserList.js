@@ -1,22 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import{
-    ListGroup,
-    ListGroupItem,
-    Button
-} from 'reactstrap';
 
-const UserList = () => {
+import UserItem from './UserItem';
+
+const UserList = ({ users, removeUser }) => {
+    console.log(users)
+    const renderedUsers = users.map(user => {
+        return <UserItem key={user.id} user={user} removeUser={removeUser}/>
+    })
     return (
-        <ListGroup className="mt-4">
-            <ListGroupItem className="d-flex"> 
-                <strong>User One</strong>
-                <div className="ml-auto">
-                    <Link className="btn btn-warning mr-1" to="/edit/1">Edit</Link>
-                    <Button color="danger">Delete</Button>
-                </div>
-            </ListGroupItem>
-        </ListGroup>
+        <div>
+            {renderedUsers}
+        </div>
     )
 };
 

@@ -2,11 +2,11 @@ import React from 'react';
 import Heading from './Heading';
 import UserList from './UserList';
 
-const Home = () => {
+const Home = ({ users }) => {
     return (
         <>
             <Heading />
-            <UserList />
+            <UserList users={users}/>
         </>
     )
 };
